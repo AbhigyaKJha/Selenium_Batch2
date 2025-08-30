@@ -9,12 +9,14 @@ import com.w2a.SeleniumMasterframework.Page.LoginPage;
 import com.w2a.SeleniumMasterframework.Page.ProductPage;
 import com.w2a.SeleniumMasterframework.testsetup.TestSetup;
 import com.w2a.SeleniumMasterframework.utils.Data;
+import com.w2a.SeleniumMasterframework.utils.ExtentReportManager;
 
 public class PlaceOrderTest extends TestSetup {
 
 	@Test(dataProviderClass = Data.class, dataProvider = "data")
 	public void verifyPlaceOrder(String UserName, String Password, String ProductPageHeader, String Products)
 			throws InterruptedException {
+		ExtentReportManager.getExtentTest().assignAuthor("Abhigya");
 		LoginPage loginPage = new LoginPage();
 		ProductPage productPage = loginPage.doLoginWithValidCredentials(UserName, Password);
 		AssertJUnit.assertTrue(productPage.isPageHeaderDisplayed());

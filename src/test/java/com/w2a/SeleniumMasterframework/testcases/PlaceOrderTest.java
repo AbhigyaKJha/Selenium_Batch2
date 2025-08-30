@@ -16,7 +16,7 @@ public class PlaceOrderTest extends TestSetup {
 	@Test(dataProviderClass = Data.class, dataProvider = "data")
 	public void verifyPlaceOrder(String UserName, String Password, String ProductPageHeader, String Products)
 			throws InterruptedException {
-		ExtentReportManager.getExtentTest().assignAuthor("Abhigyaa Jha 123");
+		ExtentReportManager.getExtentTest().assignAuthor("Abhigyaa Jha 321");
 		LoginPage loginPage = new LoginPage();
 		ProductPage productPage = loginPage.doLoginWithValidCredentials(UserName, Password);
 		AssertJUnit.assertTrue(productPage.isPageHeaderDisplayed());
